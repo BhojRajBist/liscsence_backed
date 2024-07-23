@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-u$^vuz3jxv-32m(-nj5=+akh%uc8^9bzx#!5y@f#a)8inl(@n2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ ]
+ALLOWED_HOSTS = ['https://nec.geoneer.com.np/']
 
 
 # Application definition
@@ -150,7 +150,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+import os
+
+# Base directory for your Django project
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Directory where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# URL prefix for static files
+STATIC_URL = '/static/'
+
+# Static files directories (optional)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
