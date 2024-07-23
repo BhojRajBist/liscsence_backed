@@ -12,10 +12,9 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.geoneer.com.np
-        username: geoneerc@licensenebacked.geoneer.com.np
-        password: Po[T,k!GYYiC
+        username: geoneerc@licensebackend.geoneer.com.np
+        password: o_z,GYWK1qN2
 
 
 
-
-#  Po[T,k!GYYiC
+#  o_z,GYWK1qN2
