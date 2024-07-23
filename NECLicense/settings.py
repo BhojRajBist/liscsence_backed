@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u$^vuz3jxv-32m(-nj5=+akh%uc8^9bzx#!5y@f#a)8inl(@n2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://nec.geoneer.com.np/','nec.geoneer.com.np']
 
