@@ -153,13 +153,20 @@ USE_TZ = True
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# settings.py
 
+# URL for serving static files
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Directory where collectstatic will collect all static files
+STATIC_ROOT = '/home8/geoneerc/nec.geoneer.com.np/staticfiles'
+
+# Additional directories to look for static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles'),
+    '/home6/geoneerc/virtualenv/nec.geoneer.com.np/amin/3.9/lib/python3.9/site-packages/static',
+    # Add other directories if needed
 ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
