@@ -152,15 +152,12 @@ USE_TZ = True
 
 import os
 
-# Base directory for your Django project
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Directory where static files will be collected
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# URL prefix for static files
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATICFILES_DIRS = [
+    '/home6/geoneerc/virtualenv/nec.geoneer.com.np/amin/3.9/lib/python3.9/site-packages/static'
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
