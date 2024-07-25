@@ -163,7 +163,7 @@ STATIC_ROOT = '/home8/geoneerc/nec.geoneer.com.np/staticfiles'
 
 # Additional directories to look for static files
 STATICFILES_DIRS = [
-    '/home6/geoneerc/virtualenv/nec.geoneer.com.np/amin/3.9/lib/python3.9/site-packages/static',
+    '/home6/geoneerc/virtualenv/nec.geoneer.com.np/geoneerc/3.9/lib/python3.9/site-packages/static',
     # Add other directories if needed
 ]
 
