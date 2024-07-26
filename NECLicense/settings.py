@@ -151,23 +151,38 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# import os
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# # settings.py
+
+# # URL for serving static files
+# STATIC_URL = '/static/'
+
+# # Directory where collectstatic will collect all static files
+# STATIC_ROOT = '/home8/geoneerc/nec.geoneer.com.np/staticfiles'
+
+# # Additional directories to look for static files
+# STATICFILES_DIRS = [
+#     '/home6/geoneerc/nec.geoneer.com.np/staticfiles',
+#     # Add other directories if needed
+# ]
+
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# settings.py
 
 # URL for serving static files
 STATIC_URL = '/static/'
 
-# Directory where collectstatic will collect all static files
-STATIC_ROOT = '/home8/geoneerc/nec.geoneer.com.np/staticfiles'
+# Directory where collectstatic will collect all static files for production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Additional directories to look for static files
+# Additional directories to look for static files during development
 STATICFILES_DIRS = [
-    '/home6/geoneerc/nec.geoneer.com.np/staticfiles',
+    os.path.join(BASE_DIR, 'static'),
     # Add other directories if needed
 ]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
