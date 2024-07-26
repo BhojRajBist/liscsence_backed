@@ -157,7 +157,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # settings.py
 
 # URL for serving static files
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 # Directory where collectstatic will collect all static files
 STATIC_ROOT = '/home8/geoneerc/nec.geoneer.com.np/staticfiles'
