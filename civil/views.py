@@ -13,6 +13,7 @@ from django.db.models.functions import Random
 from rest_framework.views import APIView
 from .forms import *
 from django.db.models.functions import Random
+import random
 
 
 #random question api
@@ -21,7 +22,7 @@ class RandomQuestionsAPIView(APIView):
         chapters = civilQuestions.objects.values_list('chapter', flat=True).distinct()
         if len(chapters) <10:
             return Response({"error":"Not enough chapters available"}, status= status.HTTP_400_BAD_REQUEST)
-        random_chapters = Random.sample(list(chapters),10)
+        random_chapters = random.sample(list(chapters),10)
 
         weightage_1_records = []
         weightage_2_records = []
@@ -32,10 +33,10 @@ class RandomQuestionsAPIView(APIView):
             chapter_records_weightage_2 = civilQuestions.objects.filter(chapter=chapter, weight=2)
 
             if chapter_records_weightage_1.exists():
-                weightage_1_records.extend(Random.sample(list(chapter_records_weightage_1),min(len(chapter_records_weightage_1),6)))
+                weightage_1_records.extend(random.sample(list(chapter_records_weightage_1),min(len(chapter_records_weightage_1),6)))
 
             if chapter_records_weightage_2.exists():
-                weightage_2_records.extend(Random.sample(list(chapter_records_weightage_2),min(len(chapter_records_weightage_2),2)))
+                weightage_2_records.extend(random.sample(list(chapter_records_weightage_2),min(len(chapter_records_weightage_2),2)))
         
         all_records = weightage_1_records + weightage_2_records
 
@@ -63,7 +64,7 @@ class RandomQuestionsByChapterCodeView(generics.ListAPIView):
             return filtered_questions
         
         # Otherwise, return a random sample of 20 questions
-        return Random.sample(list(filtered_questions), 10)
+        return random.sample(list(filtered_questions), 10)
     
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
